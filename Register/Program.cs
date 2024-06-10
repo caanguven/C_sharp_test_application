@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
+using System.Collections.Generic;
 
 namespace RegisterApplication{
     class Student {
@@ -14,11 +15,15 @@ namespace RegisterApplication{
 
         static List<Student> list_of_students = new List<Student>();
 
-        // list_of_students.Add(new Student{Name = "Can", Email = "can@", Age = 22});
 
     
         static void Main(string[] args) {
-            Console.WriteLine(list_of_students);
+            list_of_students.Add(new Student{Name = "Can", Email = "can@", Age = 22});
+
+            foreach (var student in list_of_students) {
+                Console.WriteLine($"Name: {student.Name}, Email: {student.Email}, Age: {student.Age}");
+            }
+
         }
 
         static void AddNewStudent(){
@@ -33,7 +38,6 @@ namespace RegisterApplication{
 
         }
 
-        
     // TO-DO 
     // Print options on command line 
     // Read the user input
