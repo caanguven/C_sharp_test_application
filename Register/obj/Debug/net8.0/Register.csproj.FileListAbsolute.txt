@@ -1,0 +1,15 @@
+/Users/canguven/Desktop/C_sharp_test_application/Register/bin/Debug/net8.0/Register
+/Users/canguven/Desktop/C_sharp_test_application/Register/bin/Debug/net8.0/Register.deps.json
+/Users/canguven/Desktop/C_sharp_test_application/Register/bin/Debug/net8.0/Register.runtimeconfig.json
+/Users/canguven/Desktop/C_sharp_test_application/Register/bin/Debug/net8.0/Register.dll
+/Users/canguven/Desktop/C_sharp_test_application/Register/bin/Debug/net8.0/Register.pdb
+/Users/canguven/Desktop/C_sharp_test_application/Register/obj/Debug/net8.0/Register.GeneratedMSBuildEditorConfig.editorconfig
+/Users/canguven/Desktop/C_sharp_test_application/Register/obj/Debug/net8.0/Register.AssemblyInfoInputs.cache
+/Users/canguven/Desktop/C_sharp_test_application/Register/obj/Debug/net8.0/Register.AssemblyInfo.cs
+/Users/canguven/Desktop/C_sharp_test_application/Register/obj/Debug/net8.0/Register.csproj.CoreCompileInputs.cache
+/Users/canguven/Desktop/C_sharp_test_application/Register/obj/Debug/net8.0/Register.sourcelink.json
+/Users/canguven/Desktop/C_sharp_test_application/Register/obj/Debug/net8.0/Register.dll
+/Users/canguven/Desktop/C_sharp_test_application/Register/obj/Debug/net8.0/refint/Register.dll
+/Users/canguven/Desktop/C_sharp_test_application/Register/obj/Debug/net8.0/Register.pdb
+/Users/canguven/Desktop/C_sharp_test_application/Register/obj/Debug/net8.0/Register.genruntimeconfig.cache
+/Users/canguven/Desktop/C_sharp_test_application/Register/obj/Debug/net8.0/ref/Register.dll
