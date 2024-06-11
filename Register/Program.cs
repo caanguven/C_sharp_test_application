@@ -9,6 +9,13 @@ namespace RegisterApplication{
         public string Email { get; set; } 
 
         public int Age { get; set; } 
+
+        public Student(string name, string email, int age)
+        {
+            Name = name;
+            Email = email;
+            Age = age;
+        }
     }
 
     class Register {
@@ -26,30 +33,49 @@ namespace RegisterApplication{
 
                 var response = Console.ReadLine();
                 switch(response){
-
                     case "1": 
                         AddNewStudent();
+                        // list_of_students.Add(new Student{Name = "Can", Email = "can@", Age = 22});
+                        Console.WriteLine("New Student Can added");
+
                         break;
                     case "2":
                         DeleteStudent();
                         break;
                     case "3":
                         QueryStudent();
+
                         break;  
                     default:
                         Console.WriteLine("choose one of the options");
                         break;
                 }
             }
-                // list_of_students.Add(new Student{Name = "Can", Email = "can@", Age = 22});
-                // foreach (var student in list_of_students) {
-                //     Console.WriteLine($"Name: {student.Name}, Email: {student.Email}, Age: {student.Age}");
-                // }
-
         }
 
         static void AddNewStudent(){
-            Console.WriteLine("Add New Student");
+            Console.WriteLine("Student Name");
+
+            string name = Console.ReadLine();
+            
+            Console.WriteLine("Student email: ");
+            string email = Console.ReadLine();
+
+            int age;
+            while(true){
+                Console.WriteLine("Student age:");
+                try{                
+                    age = Convert.ToInt32(Console.ReadLine());
+                    break;
+                }
+                catch {
+                    Console.WriteLine("Not a valid age please try again");
+                }
+            }
+
+            list_of_students.Add(new Student(name,email,age));
+
+            Console.WriteLine($"Name: {name} added");
         }
 
         static void DeleteStudent(){
@@ -58,9 +84,18 @@ namespace RegisterApplication{
         }
 
         static void QueryStudent(){
-            Console.WriteLine("Query Student");
+                if (list_of_students.Count == 0){
+                    Console.WriteLine("No students available");
+                }
 
+                 foreach (var student in list_of_students) {
+                     Console.WriteLine($"Name: {student.Name}, Email: {student.Email}, Age: {student.Age}");
+                 }
         }
+    }
+}
+
+
 
     // TO-DO 
     // Print options on command line 
@@ -68,5 +103,3 @@ namespace RegisterApplication{
     // Add New Student 
     // Query Existing Students 
     // 
-    }
-}
