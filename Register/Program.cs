@@ -48,7 +48,7 @@ namespace RegisterApplication{
                         DeleteStudent();
                         break;
                     case "3":
-                        QueryStudent();
+                        QueryStudent(list_of_students);
 
                         break;  
                     default:
@@ -103,18 +103,31 @@ namespace RegisterApplication{
                 }
 
                 else{   
+                    Console.WriteLine($"Two student with same name, let's look for the email");
+                    QueryStudent(find_students);
+                    while(true){
+                        Console.WriteLine("Enter the student EMAIL you want to delete");
+                        var student_email = Console.ReadLine();
+                        var find_students_email = list_of_students.FindAll(student => student.Email.Equals(student_email, StringComparison.OrdinalIgnoreCase));
+                        if (find_students_email.Count == 0){
+                                Console.WriteLine($"There are no students with {student_email} email");
+                        }
 
-                    
-                    Console.WriteLine($"Two student with same name, we will handle this later");
+                        else if (find_students_email.Count == 1){
+                            list_of_students.Remove(find_students_email[0]);
+                            Console.WriteLine($"Student with {student_email} email deleted");
+                            break;
+                        }
+                    }
                 }
         }
 
-        static void QueryStudent(){
-                if (list_of_students.Count == 0){
+        static void QueryStudent(List<Student> list){
+                if (list.Count == 0){
                     Console.WriteLine("No students available");
                 }
 
-                foreach (var student in list_of_students) {
+                foreach (var student in list) {
                      Console.WriteLine($"Name: {student.Name}, Email: {student.Email}, Age: {student.Age}");
                 }
         }
