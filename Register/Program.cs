@@ -2,6 +2,13 @@
 using System;
 using System.Collections.Generic;
 
+    // TO-DO 
+    // Print options on command line 
+    // Read the user input
+    // Add New Student 
+    // Query Existing Students 
+    // 
+
 namespace RegisterApplication{
     class Student {
         public string Name  { get; set; } 
@@ -21,8 +28,6 @@ namespace RegisterApplication{
     class Register {
 
         static List<Student> list_of_students = new List<Student>();
-
-
     
         static void Main(string[] args) {
 
@@ -56,10 +61,10 @@ namespace RegisterApplication{
         static void AddNewStudent(){
             Console.WriteLine("Student Name");
 
-            string name = Console.ReadLine();
+            var name = Console.ReadLine();
             
             Console.WriteLine("Student email: ");
-            string email = Console.ReadLine();
+            var email = Console.ReadLine();
 
             int age;
             while(true){
@@ -79,8 +84,29 @@ namespace RegisterApplication{
         }
 
         static void DeleteStudent(){
-            Console.WriteLine("Delete Student");
+                if (list_of_students.Count == 0){
+                    Console.WriteLine("No students available");
+                }
 
+                Console.WriteLine("Enter the student name you want to delete");
+                var student_name = Console.ReadLine();
+
+                var find_students = list_of_students.FindAll(student => student.Name.Equals(student_name, StringComparison.OrdinalIgnoreCase));
+                
+                if (find_students.Count == 0){
+                    Console.WriteLine($"There are no students with {student_name} Name");
+                }
+
+                else if (find_students.Count == 1){
+                    list_of_students.Remove(find_students[0]);
+                    Console.WriteLine($"Student {student_name} deleted");
+                }
+
+                else{   
+
+                    
+                    Console.WriteLine($"Two student with same name, we will handle this later");
+                }
         }
 
         static void QueryStudent(){
@@ -88,18 +114,12 @@ namespace RegisterApplication{
                     Console.WriteLine("No students available");
                 }
 
-                 foreach (var student in list_of_students) {
+                foreach (var student in list_of_students) {
                      Console.WriteLine($"Name: {student.Name}, Email: {student.Email}, Age: {student.Age}");
-                 }
+                }
         }
     }
 }
 
 
 
-    // TO-DO 
-    // Print options on command line 
-    // Read the user input
-    // Add New Student 
-    // Query Existing Students 
-    // 
